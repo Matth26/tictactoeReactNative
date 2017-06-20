@@ -14,11 +14,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const XSymbol = () => (
-  <View style={styles.cell}>
+const XSymbol = () =>
+  (<View style={styles.cell}>
     <Text style={styles.symbol}> X </Text>
-  </View>
-);
+  </View>);
 
 XSymbol.propTypes = {
   position: React.PropTypes.number.isRequired,

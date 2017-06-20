@@ -17,13 +17,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const Cell = props => (
-  <TouchableHighlight underlayColor="#ffffff" onPress={props.addSymbol}>
+const Cell = props =>
+  (<TouchableHighlight underlayColor="#ffffff" onPress={props.addSymbol}>
     <View style={styles.cellContainer}>
       <Symbol />
     </View>
-  </TouchableHighlight>
-);
+  </TouchableHighlight>);
 
 Cell.propTypes = {
   addSymbol: PropTypes.func.isRequired,

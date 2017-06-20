@@ -19,6 +19,8 @@ const defaultState = fromJS({
 export default function (state = defaultState, action) {
   switch (action.type) {
     case game.ADD_SYMBOL: {
+      console.log('aaaaaaaaaaaaaaaaaaaahhhhhhhhhhh');
+      console.log(action);
       const { symbol, row, position } = action;
 
       let newState = state.setIn(['board', row.toString(), position], symbol);
@@ -44,8 +46,8 @@ export default function (state = defaultState, action) {
       }
 
       const boardIsFull =
-                [...newBoard[0], ...newBoard[1], ...newBoard[2]].filter(symbol => symbol !== '')
-                    .length === 9;
+        [...newBoard[0], ...newBoard[1], ...newBoard[2]].filter(symbol => symbol !== '').length ===
+        9;
 
       if (boardIsFull && !newState.get('won')) {
         newState = newState.set('draw', true);

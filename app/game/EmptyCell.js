@@ -1,18 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { TouchableWithoutFeedback, View, StyleSheet } from 'react-native';
 
-const EmptyCell = props => (
-  <TouchableWithoutFeedback onPress={() => props.addSymbol(props.turn)}>
-    <View style={styles.cell} />
-  </TouchableWithoutFeedback>
-);
-
-EmptyCell.propTypes = {
-    // position: React.PropTypes.number.isRequired,
-  addSymbol: React.PropTypes.func.isRequired,
-};
-
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   cell: {
     width: 104,
     height: 104,
@@ -21,5 +10,14 @@ let styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
 });
+
+const EmptyCell = props =>
+  (<TouchableWithoutFeedback onPress={() => props.addSymbol()}>
+    <View style={styles.cell} />
+  </TouchableWithoutFeedback>);
+
+EmptyCell.propTypes = {
+  addSymbol: React.PropTypes.func.isRequired,
+};
 
 export default EmptyCell;

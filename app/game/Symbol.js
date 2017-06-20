@@ -1,14 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Text } from 'react-native';
 
-const Symbol = (props) => {
-  return (
-    <Text>{props.symbol}</Text>
-  );
-};
+const Symbol = props => <Text>{props.symbol}</Text>;
 
 Symbol.propTypes = {
-  position: React.PropTypes.symbol.isRequired
+  position: React.PropTypes.symbol.isRequired,
 };
 
 export default Symbol;
